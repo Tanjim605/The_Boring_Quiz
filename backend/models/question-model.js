@@ -17,6 +17,9 @@ const QuestionSchema = mongoose.Schema(
             ref: 'Option',
             default: []
         }]
+    },
+    {
+        timestamps: true
     }
 )
 

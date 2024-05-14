@@ -23,6 +23,9 @@ const SubmittedAnswerSchema = mongoose.Schema(
             ref: 'Option', 
             required: true 
         }
+    },
+    {
+        timestamps: true
     }
 )
 

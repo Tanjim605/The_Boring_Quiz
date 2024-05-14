@@ -4,7 +4,7 @@ const teacherController = require('../controllers/teacher-controller')
 const router = express.Router()
 
 
-router.post('/',teacherController.createTeacher)
+router.post('/', teacherController.createTeacher)
 
 router.get('/', teacherController.getAllTeachers)
 
