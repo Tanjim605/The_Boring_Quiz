@@ -6,6 +6,7 @@ const bodyParser = require('body-parser')
 
 
 const teacherRoutes = require('./routes/teacher-route')     // gotta add all of the routes
+const studentRoutes = require('./routes/student-route')
 
 
 const app = express()
@@ -16,7 +17,8 @@ app.use(express.static('../frontend/public'))
 
 
 // here add the path and routes for website
-app.use('/api/teacher',teacherRoutes)
+app.use('/api/teacher', teacherRoutes)
+app.use('/api/student', studentRoutes)
 
 
 
@@ -27,6 +29,6 @@ mongoose.connect('mongodb+srv://c213076:qZPntQBkLAauWGw1@backenddb.pwut9sa.mongo
             console.log(`Server is running on port ${port}`)
         })
     })
-    .catch(err=>{
+    .catch(err => {
         console.log(`MongoDB connection FAILED ${err}`)
     })

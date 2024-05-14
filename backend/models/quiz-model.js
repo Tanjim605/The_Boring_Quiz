@@ -14,8 +14,12 @@ const QuizSchema = mongoose.Schema(
         },
         question_ids: [{ 
             type: Schema.Types.ObjectId, 
-            ref: 'Question' 
+            ref: 'Question',
+            default: []
         }]
+    },
+    {
+        timestamps: true
     }
 )
 

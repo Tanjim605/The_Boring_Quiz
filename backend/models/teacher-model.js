@@ -20,6 +20,9 @@ const TeacherSchema = mongoose.Schema(
             ref: 'Quiz',
             default: []
         }]
+    },
+    {
+        timestamps: true
     }
 )
 

@@ -1,15 +1,17 @@
 const Teacher = require('../models/teacher-model')
 
 // Create a new teacher
-const createTeacher = (req, res) => {
+const createTeacher = async (req, res) => {
+    const { name, email, password } = req.body;
     try {
-        const teacher = Teacher.create(req.body);
-        // await teacher.save();
-        res.status(201).json(teacher);
+        const newTeacher = new Teacher({ name, email, password, quizzes: [] });
+        await newTeacher.save();
+        res.status(201).json({ message: 'Teacher created successfully' });
     } catch (error) {
-        res.status(400).json(error);
+        res.status(400).json({ error: error.message });
     }
 };
+
 
 // Get all teachers
 const getAllTeachers = async (req, res) => {

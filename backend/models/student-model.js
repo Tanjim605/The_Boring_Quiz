@@ -15,6 +15,9 @@ const StudentSchema = mongoose.Schema(
             type: String, 
             required: true 
         }
+    },
+    {
+        timestamps: true
     }
 )
 

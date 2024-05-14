@@ -11,6 +11,9 @@ const OptionSchema = mongoose.Schema(
             type: Boolean, 
             required: true 
         }
+    },
+    {
+        timestamps: true
     }
 )
 
