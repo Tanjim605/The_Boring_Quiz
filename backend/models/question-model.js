@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 const QuestionSchema = mongoose.Schema(
     {
-        question_id: {
-            type: String,
-            required: true
-        },
         statement: { 
             type: String, 
             required: true 
@@ -18,10 +14,13 @@ const QuestionSchema = mongoose.Schema(
         },
         option_ids: [{ 
             type: Schema.Types.ObjectId, 
-            ref: 'Option' 
+            ref: 'Option',
+            default: []
         }]
     }
 )
 
 
 const Question = mongoose.model("Question",QuestionSchema)
+
+module.exports = Question

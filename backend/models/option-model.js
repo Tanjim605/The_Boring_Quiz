@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 const OptionSchema = mongoose.Schema(
     {
-        option_id: { 
-            type: String, 
-            required: true 
-        },
         option_text: { 
             type: String, 
             required: true 
@@ -20,3 +16,5 @@ const OptionSchema = mongoose.Schema(
 
 
 const Option = mongoose.model("Option",OptionSchema)
+
+module.exports = Option

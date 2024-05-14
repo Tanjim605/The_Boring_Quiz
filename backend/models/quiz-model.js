@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 const QuizSchema = mongoose.Schema(
     {
-        quiz_id: { 
-            type: String, 
-            required: true 
-        },
         title: { 
             type: String, 
             required: true 
@@ -25,3 +21,4 @@ const QuizSchema = mongoose.Schema(
 
 
 const Quiz = mongoose.model("Quiz",QuizSchema)
+module.exports = Quiz

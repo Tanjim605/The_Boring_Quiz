@@ -1,13 +1,13 @@
 const Teacher = require('../models/teacher-model')
 
 // Create a new teacher
-const createTeacher = async (req, res) => {
+const createTeacher = (req, res) => {
     try {
-        const teacher = new Teacher(req.body);
-        await teacher.save();
-        res.status(201).send(teacher);
+        const teacher = Teacher.create(req.body);
+        // await teacher.save();
+        res.status(201).json(teacher);
     } catch (error) {
-        res.status(400).send(error);
+        res.status(400).json(error);
     }
 };
 

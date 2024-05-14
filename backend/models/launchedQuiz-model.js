@@ -17,3 +17,5 @@ const LaunchedQuizSchema = mongoose.Schema(
 
 
 const LaunchedQuiz = mongoose.model("LaunchedQuiz",LaunchedQuizSchema)
+
+module.exports = LaunchedQuiz

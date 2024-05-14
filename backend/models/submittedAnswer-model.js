@@ -27,4 +27,6 @@ const SubmittedAnswerSchema = mongoose.Schema(
 )
 
 
-const SubmittedAnswer = mongoose.model('SubmittedAnswer', SubmittedAnswerSchema);
+const SubmittedAnswer = mongoose.model('SubmittedAnswer', SubmittedAnswerSchema)
+
+module.exports = SubmittedAnswer
