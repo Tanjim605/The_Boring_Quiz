@@ -5,7 +5,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
 
-const teacherRoutes = require('./routes/teacher-route')
+const teacherRoutes = require('./routes/teacher-route')     // gotta add all of the routes
 
 
 const app = express()
@@ -13,6 +13,11 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('../frontend/public'))
+
+
+// here add the path and routes for website
+app.use('/api/teacher',teacherRoutes)
+
 
 
 mongoose.connect('mongodb+srv://c213076:qZPntQBkLAauWGw1@backenddb.pwut9sa.mongodb.net/the_boring_quiz_DB?retryWrites=true&w=majority&appName=BackendDB')

@@ -3,10 +3,6 @@ const Schema = mongoose.Schema;
 
 const StudentSchema = mongoose.Schema(
     {
-        student_id: {
-            type: String,
-            required: true
-        },
         name: {
             type: String, 
             required: true
@@ -24,3 +20,5 @@ const StudentSchema = mongoose.Schema(
 
 
 const Student = mongoose.model("Student",StudentSchema)
+
+module.exports = Student
