@@ -7,11 +7,6 @@ const QuizSchema = mongoose.Schema(
             type: String, 
             required: true 
         },
-        teacher_id: { 
-            type: Schema.Types.ObjectId, 
-            ref: 'Teacher', 
-            required: true 
-        },
         question_ids: [{ 
             type: Schema.Types.ObjectId, 
             ref: 'Question',
@@ -25,4 +20,18 @@ const QuizSchema = mongoose.Schema(
 
 
 const Quiz = mongoose.model("Quiz",QuizSchema)
+
 module.exports = Quiz
+
+
+/*
+//  this teacher_id field is removed. we won't have to render quiz collection for teacher
+//  we run function of teacher collection to get quiz_id array to render QUIZ under teacher
+
+
+teacher_id: { 
+    type: Schema.Types.ObjectId, 
+    ref: 'Teacher', 
+    required: true 
+},
+*/
