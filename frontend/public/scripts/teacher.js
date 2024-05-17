@@ -13,9 +13,11 @@ async function fetchTeacherData() {
         return response.json()
     }
     teacherObj = await response.json()
-    console.log(teacherObj.name);
+    // console.log(teacherObj.name);
 
     document.getElementById('t_name').innerText = teacherObj.name
+    document.getElementById('t_mail').innerText = teacherObj.email
+    document.getElementById('t_pass').innerText = teacherObj.password
 }
 
 fetchTeacherData()

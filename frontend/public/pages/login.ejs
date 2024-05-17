@@ -1,22 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
     <script src="../scripts/login.js" defer></script>
 
     <title>Login</title>
-</head>
-<body>
-    <form action="../login" method="post">
-        <label for="email">Mail: </label>
-        <input type="text" name="email" id="email">
-        <br><br>
-        <label for="password">Password: </label>
-        <input type="text" name="password" id="password">
+  </head>
+  <body>
+    <div id="error-msg"></div>
 
-        <br><br>
-        <button type="submit" onclick="loginHandle()">Submit</button>
+    <form id="login_form">
+      <div>
+        <input type="radio" name="user" id="teacher" value="teacher" required />
+        <label for="teacher">Teacher</label>
+
+        <input type="radio" name="user" id="student" value="student" required />
+        <label for="student">Student</label>
+      </div>
+
+      <div>
+        <br /><br />
+        <label for="email">Mail: </label>
+        <input type="text" name="email" id="email" required />
+        <br /><br />
+      </div>
+
+      <div>
+        <label for="password">Password: </label>
+        <input type="text" name="password" id="password" required />
+      </div>
+      <br /><br />
+
+      <button onclick="loginHandle()" type="submit">Submit</button>
     </form>
-</body>
+  </body>
 </html>
