@@ -553,3 +553,20 @@ video {
   --tw-contain-paint:  ;
   --tw-contain-style:  ;
 }
+
+.m-2 {
+  margin: 0.5rem;
+}
+
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.bg-lime-600 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(101 163 13 / var(--tw-bg-opacity));
+}
+
+.p-4 {
+  padding: 1rem;
+}
