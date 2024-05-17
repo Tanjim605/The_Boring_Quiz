@@ -6,7 +6,9 @@ const router = express.Router()
 
 router.get('/login', renderController.loginForm)
 
-router.post('/login', teacherController.getTeacherByEmail)
+router.get('/signUp', renderController.signUpForm)
+
+// router.post('/login', teacherController.getTeacherByEmail)
 
 router.get('/teacher/:id', renderController.teacherProfile)
 

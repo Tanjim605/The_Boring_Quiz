@@ -4,6 +4,11 @@ const Teacher = require('../models/teacher-model')
 const createTeacher = async (req, res) => {
     const { name, email, password } = req.body;
     try {
+        const existingTeacher = await Teacher.findOne({ email });
+        if (existingTeacher) {
+            return res.status(400).json({ message: 'Email already exists' });
+        }
+        
         const newTeacher = new Teacher({ name, email, password, quizzes: [] });
         await newTeacher.save();
         res.status(201).json({ message: 'Teacher created successfully' });

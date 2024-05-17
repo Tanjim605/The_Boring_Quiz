@@ -4,6 +4,11 @@ const Student = require('../models/student-model')
 const createStudent = async (req, res) => {
     const { name, email, password } = req.body;
     try {
+        const existingStudent = await Student.findOne({ email });
+        if (existingStudent) {
+            return res.status(400).json({ message: 'Email already exists' });
+        }
+
         const newStudent = new Student({ name, email, password });
         await newStudent.save();
         res.status(201).json({ message: 'Student created successfully' });
