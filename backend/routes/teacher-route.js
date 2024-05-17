@@ -14,5 +14,7 @@ router.put('/:id', teacherController.updateTeacher)
 
 router.delete('/:id', teacherController.deleteTeacher)
 
+router.get('/login', teacherController.getTeacherByEmail)
+
 
 module.exports = router

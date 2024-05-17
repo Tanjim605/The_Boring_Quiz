@@ -62,9 +62,35 @@ const deleteTeacher = async (req, res) => {
     }
 };
 
+// For login purpose
+const getTeacherByEmail = async (req, res) => {
+    const { email, password } = req.body
+    // console.log(req.body);
+    try {
+        const teacher = await Teacher.findOne({ email })
+
+        if (!teacher) {
+            return res.status(400).json({ message: 'No mail found' });
+        }
+
+        const isMatch = (teacher.password == password)
+
+        if (isMatch) {
+            // console.log(teacher)
+            res.redirect(`../teacher/${teacher._id}`)
+            // res.render('../../frontend/public/pages/teacherProfile.ejs')
+        }
+
+    } catch (error) {
+        res.status(500).send(error.message)
+    }
+}
+
 
 exports.createTeacher = createTeacher
 exports.getAllTeachers = getAllTeachers
 exports.getTeacherById = getTeacherById
 exports.updateTeacher = updateTeacher
 exports.deleteTeacher = deleteTeacher
+
+exports.getTeacherByEmail = getTeacherByEmail
