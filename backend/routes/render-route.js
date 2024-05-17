@@ -10,5 +10,7 @@ router.post('/login', teacherController.getTeacherByEmail)
 
 router.get('/teacher/:id', renderController.teacherProfile)
 
+router.get('/student/:id', renderController.studentProfile)
+
 
 module.exports = router

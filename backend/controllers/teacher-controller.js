@@ -70,6 +70,8 @@ const getTeacherByEmail = async (req, res) => {
         const teacher = await Teacher.findOne({ email })
 
         if (!teacher) {
+            res.redirect(`../login`)
+            return
             return res.status(400).json({ message: 'No mail found' });
         }
 
