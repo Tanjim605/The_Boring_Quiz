@@ -21,7 +21,7 @@ app.use(express.static('../frontend/public'))
 app.use('/api/teacher', teacherRoutes)
 app.use('/api/student', studentRoutes)
 
-app.use('/', renderRoutes)
+app.use('/', renderRoutes)      // all types of page rendering is done by this
 
 
 mongoose.connect('mongodb+srv://c213076:qZPntQBkLAauWGw1@backenddb.pwut9sa.mongodb.net/the_boring_quiz_DB?retryWrites=true&w=majority&appName=BackendDB')

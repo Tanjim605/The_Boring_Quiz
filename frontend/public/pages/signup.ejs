@@ -4,20 +4,26 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <script src="../scripts/login.js" defer></script>
+    <script src="../scripts/signup.js" defer></script>
 
-    <title>Login</title>
+    <title>Sign-Up</title>
   </head>
   <body>
     <div id="error-msg"></div>
 
-    <form id="login_form">
+    <form id="signup_Form">
       <div>
         <input type="radio" name="user" id="teacher" value="teacher" required />
         <label for="teacher">Teacher</label>
 
         <input type="radio" name="user" id="student" value="student" required />
         <label for="student">Student</label>
+      </div>
+      <br />
+
+      <div>
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" required />
       </div>
       <br />
 
@@ -33,7 +39,7 @@
       </div>
       <br />
 
-      <button onclick="loginHandle()" type="submit">Submit</button>
+      <button onclick="signupHandle()" type="submit">Submit</button>
     </form>
   </body>
 </html>

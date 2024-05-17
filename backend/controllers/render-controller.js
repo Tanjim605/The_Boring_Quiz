@@ -1,3 +1,7 @@
+const signUpForm = (req,res)=>{
+    res.render('../../frontend/public/pages/signup.ejs')
+}
+
 const loginForm = (req, res) => {
     res.render('../../frontend/public/pages/login.ejs')
 }
@@ -11,5 +15,6 @@ const studentProfile = (req,res) => {
 }
 
 exports.loginForm = loginForm
+exports.signUpForm = signUpForm
 exports.teacherProfile = teacherProfile
 exports.studentProfile = studentProfile
