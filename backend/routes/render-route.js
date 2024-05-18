@@ -10,7 +10,9 @@ router.get('/signUp', renderController.signUpForm)
 
 // router.post('/login', teacherController.getTeacherByEmail)
 
-router.get('/teacher/:id', renderController.teacherProfile)
+router.get('/teacher/:id/', renderController.teacherProfile)
+
+router.get('/teacher/:id/createQuiz', renderController.createQuiz)
 
 router.get('/student/:id', renderController.studentProfile)
 
