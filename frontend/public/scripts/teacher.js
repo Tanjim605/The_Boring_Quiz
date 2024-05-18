@@ -18,7 +18,19 @@ async function fetchTeacherData() {
     document.getElementById('t_name').innerText = teacherObj.name
     document.getElementById('t_mail').innerText = teacherObj.email
     document.getElementById('t_pass').innerText = teacherObj.password
+
+    const quizzes = document.getElementById('t_quiz')
+    if(teacherObj.quiz_ids.length == 0)
+        quizzes.innerHTML = `You haven't created any quiz`
+
+    for (let i = 0; i < teacherObj.quiz_ids.length; i++){
+        quizzes.innerHTML += `<li> ${teacherObj.quiz_ids[i].title} </li>` 
+        // console.log(teacherObj.quiz_ids[i].title);
+    }
 }
 
 fetchTeacherData()
 
+function createQuiz() {
+    window.location.href += `/createQuiz`
+}

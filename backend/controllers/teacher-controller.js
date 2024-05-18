@@ -31,7 +31,7 @@ const getAllTeachers = async (req, res) => {
 // Get a teacher by ID
 const getTeacherById = async (req, res) => {
     try {
-        const teacher = await Teacher.findById(req.params.id);
+        const teacher = await Teacher.findById(req.params.id).populate('quiz_ids');
         if (!teacher) {
             return res.status(404).send();
         }
@@ -44,7 +44,7 @@ const getTeacherById = async (req, res) => {
 // Update a teacher by ID
 const updateTeacher = async (req, res) => {
     try {
-        const teacher = await Teacher.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+        const teacher = await Teacher.findByIdAndUpdate(req.params.id, req.body);
         if (!teacher) {
             return res.status(404).send();
         }

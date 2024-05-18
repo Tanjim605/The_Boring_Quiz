@@ -1,4 +1,4 @@
-const signUpForm = (req,res)=>{
+const signUpForm = (req, res) => {
     res.render('../../frontend/public/pages/signup.ejs')
 }
 
@@ -10,7 +10,11 @@ const teacherProfile = (req, res) => {
     res.render('../../frontend/public/pages/teacherProfile.ejs')
 }
 
-const studentProfile = (req,res) => {
+const createQuiz = (req, res) => {
+    res.render('../../frontend/public/pages/createQuiz.ejs')
+}
+
+const studentProfile = (req, res) => {
     res.render('../../frontend/public/pages/studentProfile.ejs')
 }
 
@@ -18,3 +22,4 @@ exports.loginForm = loginForm
 exports.signUpForm = signUpForm
 exports.teacherProfile = teacherProfile
 exports.studentProfile = studentProfile
+exports.createQuiz = createQuiz
