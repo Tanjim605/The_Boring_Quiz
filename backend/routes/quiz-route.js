@@ -4,6 +4,8 @@ const quizController = require('../controllers/quiz-controller')
 const router = express.Router()
 
 
+router.post('/create', quizController.createQuizFormUI);
+
 router.post('/', quizController.createQuiz);
 
 router.get('/', quizController.getAllQuizzes);
