@@ -10,6 +10,27 @@
   </head>
 
   <body>
-    
+    <h1>Create Quiz</h1>
+    <form id="quizForm">
+      <label for="title">Quiz Title:</label>
+      <input type="text" id="title" name="title" required /><br />
+
+      <div id="questions"></div>
+
+      <div>
+        <br />
+        <input type="radio" name="q_type" id="mcq" value="mcq" />
+        <label for="mcq">MCQ</label>
+
+        <input type="radio" name="q_type" id="tf" value="tf" />
+        <label for="tf">True/False</label>
+
+        <button onclick="showOptions()">Add Question</button>
+        <br />
+        <br />
+      </div>
+
+      <button type="submit">Create Quiz</button>
+    </form>
   </body>
 </html>
