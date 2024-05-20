@@ -20,11 +20,13 @@ async function fetchTeacherData() {
     document.getElementById('t_pass').innerText = teacherObj.password
 
     const quizzes = document.getElementById('t_quiz')
-    if(teacherObj.quiz_ids.length == 0)
+    if (teacherObj.quiz_ids.length == 0)
         quizzes.innerHTML = `You haven't created any quiz`
 
-    for (let i = 0; i < teacherObj.quiz_ids.length; i++){
-        quizzes.innerHTML += `<li> ${teacherObj.quiz_ids[i].title} </li>` 
+    for (let i = 0; i < teacherObj.quiz_ids.length; i++) {
+        let quiz_link = window.location.href + `/quiz/${teacherObj.quiz_ids[i]._id}`
+        quizzes.innerHTML += `<li> <a href="${quiz_link}"> ${teacherObj.quiz_ids[i].title} </a> </li>`
+
         // console.log(teacherObj.quiz_ids[i].title);
     }
 }
