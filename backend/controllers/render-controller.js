@@ -10,6 +10,10 @@ const teacherProfile = (req, res) => {
     res.render('../../frontend/public/pages/teacherProfile.ejs')
 }
 
+const teacherQuizById = (req, res) => {
+    res.render('../../frontend/public/pages/quizById.ejs')
+}
+
 const createQuiz = (req, res) => {
     res.render('../../frontend/public/pages/createQuiz.ejs')
 }
@@ -21,5 +25,6 @@ const studentProfile = (req, res) => {
 exports.loginForm = loginForm
 exports.signUpForm = signUpForm
 exports.teacherProfile = teacherProfile
+exports.teacherQuizById = teacherQuizById
 exports.studentProfile = studentProfile
 exports.createQuiz = createQuiz
