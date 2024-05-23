@@ -7,7 +7,7 @@ const t_id = (url_string.split(`/teacher/`)[1]).split(`/`)[0]
 const questionContainer = document.getElementById('questions');
 
 
-function showOptions() {
+function addQuestion() {
     let type = document.querySelector('input[name="q_type"]:checked').value
     document.querySelector('input[name="q_type"]:checked').checked = false
     if (type == 'mcq') {
