@@ -11,6 +11,7 @@ const renderRoutes = require('./routes/render-route')
 const quizRoutes = require('./routes/quiz-route')
 const questionRoutes = require('./routes/question-route')
 const optionRoutes = require('./routes/option-route')
+const launchedQuizRoutes = require('./routes/launchedQuiz-route')
 
 
 const app = express()
@@ -26,6 +27,7 @@ app.use('/api/student', studentRoutes)
 app.use('/api/quiz', quizRoutes)
 app.use('/api/question', questionRoutes)
 app.use('/api/option', optionRoutes)
+app.use('/api/launchedQuiz', launchedQuizRoutes)
 
 
 app.use('/', renderRoutes)      // all types of page rendering is done by this
