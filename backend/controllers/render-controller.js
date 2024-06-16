@@ -22,9 +22,14 @@ const studentProfile = (req, res) => {
     res.render('../../frontend/public/pages/studentProfile.ejs')
 }
 
+const quizToStudent = (req, res) => {
+    res.render('../../frontend/public/pages/quizToStudent.ejs')
+}
+
 exports.loginForm = loginForm
 exports.signUpForm = signUpForm
 exports.teacherProfile = teacherProfile
 exports.teacherQuizById = teacherQuizById
 exports.studentProfile = studentProfile
 exports.createQuiz = createQuiz
+exports.quizToStudent = quizToStudent

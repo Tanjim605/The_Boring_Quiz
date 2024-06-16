@@ -22,3 +22,14 @@ async function fetchStudentData() {
 }
 
 fetchStudentData()
+
+function attendQuiz(){
+    let enteredRoom = prompt('Enter your exam room number')
+    // console.log(enteredRoom);
+    // alert('attend block')
+    showQuiz(enteredRoom)
+}
+
+async function showQuiz(room_number){
+    window.location.href += `/attendQ/${room_number}`   // window page redirect kore. we can use student_id and room_number
+}
