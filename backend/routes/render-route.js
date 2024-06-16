@@ -19,5 +19,7 @@ router.get('/teacher/:t_id/quiz/:quiz_id', renderController.teacherQuizById)
 
 router.get('/student/:id', renderController.studentProfile)
 
+router.get('/student/:id/attendQ/:quiz_id', renderController.quizToStudent)
+
 
 module.exports = router

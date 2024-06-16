@@ -5,5 +5,6 @@ const router = express.Router()
 
 router.post('/', launchedQuizController.createLaunchedQuiz)
 
+router.get('/:id', launchedQuizController.getQuizIdByRoomId)
 
 module.exports = router
