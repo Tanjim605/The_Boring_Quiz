@@ -4,25 +4,22 @@ const Schema = mongoose.Schema;
 const SubmittedAnswerSchema = mongoose.Schema(
     {
         room_id: {
-            type: Schema.Types.ObjectId,
-            ref: 'LaunchedQuiz',
+            type: String,
             required: true
         },
-        student_id: { 
-            type: Schema.Types.ObjectId, 
-            ref: 'Student', 
-            required: true 
-        },
-        question_id: { 
-            type: Schema.Types.ObjectId, 
-            ref: 'Question', 
-            required: true 
-        },
-        option_id: { 
-            type: Schema.Types.ObjectId, 
-            ref: 'Option', 
-            required: true 
-        }
+        submissions: [
+            {
+                student_id: {
+                    type: Schema.Types.ObjectId,       // Reference to the Student model
+                    ref: 'Student'
+                },
+                submitted_option: [{             // Array of selected option IDs default e skip dibo
+                    type: Schema.Types.ObjectId,
+                    ref: 'Option',
+                    default: "skip"
+                }]
+            }
+        ]
     },
     {
         timestamps: true

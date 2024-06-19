@@ -5,6 +5,7 @@ const roomId = needed_url[1]
 
 const quizTitleEl = document.getElementById('quiz_title')
 const questionStatementEl = document.getElementById('question_statement')
+const submitQuizBtnEl = document.getElementById('submitQuizBtn')
 
 
 async function fetchQuizData() {
@@ -24,7 +25,7 @@ async function fetchQuizData() {
 
     quizTitleEl.innerText = quizObj.title
 
-    let questionText = ""
+    let questionText = `<form id="quizForm">`
 
     for (let i = 0; i < quizObj.question_ids.length; i++) {     // this i loop runs on question
         questionText += `<fieldset> Question: `
@@ -34,16 +35,66 @@ async function fetchQuizData() {
         for (let j = 0; j < quizObj.question_ids[i].option_ids.length; j++) {       // this j loop runs on options
             const optionText = quizObj.question_ids[i].option_ids[j].option_text;
 
-            questionText += `<input type="radio" id="Question${i} Option${j}" name="Question${i}" value="${optionText}" />
+            questionText += `<input type="radio" id="Question${i} Option${j}" name="${quizObj.question_ids[i]._id}" value="${quizObj.question_ids[i].option_ids[j]._id}" />
             <label for="Question${i} Option${j}">${optionText}</label>`
+            // shob option er radio te question._id ta name hishebe jabe
             // questionText += `<li> ${optionText} </li>`
         }
         questionText += `</ol> </fieldset>`
 
     }
+    questionText +=`</form>`
     if (quizObj.question_ids.length == 0)
         questionText = `There are no question in this quiz`
     questionStatementEl.innerHTML += questionText
 }
 
-fetchQuizData()
+fetchQuizData()         // calling the function to render all questions
+
+
+
+submitQuizBtnEl.addEventListener('click', async function() {
+    const form = document.getElementById('quizForm');
+    const formData = new FormData(form);
+
+    // Creating submissions array
+    const submissions = [];
+    formData.forEach((value, key) => {
+        submissions.push(value);
+    });
+
+    const student_id = studentId;
+    const room_number = roomId;
+
+    const dataToSend = {
+        room_id: room_number,
+        submissions: [
+            {
+                student_id: student_id,
+                submitted_option: submissions
+            }
+        ]
+    };
+
+    // data server e patacchi
+    try {
+        const option = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(dataToSend)
+        }
+
+        const response = await fetch(`/api/submission/${room_number}`, option);
+
+        if (response.ok) {
+            const result = await response.json();
+            console.log('Answers submitted successfully:', result);
+        } else {
+            console.error('Failed to submit answers:', response.statusText);
+        }
+    } catch (error) {
+        console.error('Error submitting answers:', error);
+    }
+})
