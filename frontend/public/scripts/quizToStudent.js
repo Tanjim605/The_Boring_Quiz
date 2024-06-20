@@ -28,11 +28,12 @@ async function fetchQuizData() {
     let questionText = `<form id="quizForm">`
 
     for (let i = 0; i < quizObj.question_ids.length; i++) {     // this i loop runs on question
+        let j;
         questionText += `<fieldset> Question: `
         questionText += quizObj.question_ids[i].statement
         questionText += `<br><br> Options: <ol>`
         // console.log(quizObj.question_ids[i].statement);
-        for (let j = 0; j < quizObj.question_ids[i].option_ids.length; j++) {       // this j loop runs on options
+        for (j = 0; j < quizObj.question_ids[i].option_ids.length; j++) {       // this j loop runs on options
             const optionText = quizObj.question_ids[i].option_ids[j].option_text;
 
             questionText += `<input type="radio" id="Question${i} Option${j}" name="${quizObj.question_ids[i]._id}" value="${quizObj.question_ids[i].option_ids[j]._id}" />
@@ -40,10 +41,14 @@ async function fetchQuizData() {
             // shob option er radio te question._id ta name hishebe jabe
             // questionText += `<li> ${optionText} </li>`
         }
+        questionText += `<input type="radio" id="Question${i} Option${j}" name="${quizObj.question_ids[i]._id}" value="6673c351fa62e4905445dcbd" checked/>
+            <label for="Question${i} Option${j}">Skip</label>`      // skip option for each question
+            // value field e skip option tar _id hard code kora
+
         questionText += `</ol> </fieldset>`
 
     }
-    questionText +=`</form>`
+    questionText += `</form>`
     if (quizObj.question_ids.length == 0)
         questionText = `There are no question in this quiz`
     questionStatementEl.innerHTML += questionText
@@ -53,7 +58,7 @@ fetchQuizData()         // calling the function to render all questions
 
 
 
-submitQuizBtnEl.addEventListener('click', async function() {
+submitQuizBtnEl.addEventListener('click', async function () {
     const form = document.getElementById('quizForm');
     const formData = new FormData(form);
 
