@@ -36,3 +36,13 @@ fetchTeacherData()
 function createQuiz() {
     window.location.href += `/createQuiz`
 }
+
+function viewResult() {
+    // this is gonna change the url to see quiz result
+    let roomNumber = prompt('Enter the exam room number to see result: ')
+    showResult(roomNumber)
+}
+
+async function showResult(room_number){
+    window.location.href += `/resultView/${room_number}`   // window page redirect kore.
+}

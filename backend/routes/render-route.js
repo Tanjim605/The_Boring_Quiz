@@ -21,5 +21,7 @@ router.get('/student/:id', renderController.studentProfile)
 
 router.get('/student/:id/attendQ/:quiz_id', renderController.quizToStudent)
 
+router.get('/teacher/:t_id/resultView/:room_id', renderController.resultToTeacher)
+
 
 module.exports = router

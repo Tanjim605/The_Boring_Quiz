@@ -26,6 +26,10 @@ const quizToStudent = (req, res) => {
     res.render('../../frontend/public/pages/quizToStudent.ejs')
 }
 
+const resultToTeacher = (req, res) => {
+    res.render('../../frontend/public/pages/showResults.ejs')
+}
+
 exports.loginForm = loginForm
 exports.signUpForm = signUpForm
 exports.teacherProfile = teacherProfile
@@ -33,3 +37,4 @@ exports.teacherQuizById = teacherQuizById
 exports.studentProfile = studentProfile
 exports.createQuiz = createQuiz
 exports.quizToStudent = quizToStudent
+exports.resultToTeacher = resultToTeacher

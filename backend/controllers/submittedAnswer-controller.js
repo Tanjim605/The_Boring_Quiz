@@ -46,8 +46,6 @@ const getSubmissionsByRoomNumber = async (req, res) => {
     const { room_id } = req.params;
 
     const submissions = await SubmittedAnswer.findOne({ room_id })
-      .populate('submissions.student_id', 'name email')
-      .populate('submissions.answers', 'text');
 
     if (!submissions) {
       return res.status(404).json({ message: 'Submissions not found for this room number' });
