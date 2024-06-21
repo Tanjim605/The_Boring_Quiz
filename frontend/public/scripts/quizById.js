@@ -6,6 +6,8 @@ const quizTitleEl = document.getElementById('quiz_title')
 const questionStatementEl = document.getElementById('question_statement')
 const optionsEl = document.getElementById('options')
 
+const optionSerial = 'abcd'
+
 async function fetchQuizData() {
     const response = await fetch(`/api/quiz/${quizId}`)
 
@@ -19,21 +21,27 @@ async function fetchQuizData() {
 
     quizTitleEl.innerText = quizObj.title
 
-    let questionText = ""
+    let questionText = `<div class="bg-yellow-500 p-4 rounded-xl">`
 
     for (let i = 0; i < quizObj.question_ids.length; i++) {
-        questionText += `Question: `
+        questionText += `
+                            <div class="bg-gray-400 p-4 mb-4 rounded-xl">
+                                <div class="bg-gray-300 mb-4 rounded-xl"> 
+                                    Question: `
         questionText += quizObj.question_ids[i].statement
-        questionText += `<br><br> Options: <ol>`
+        questionText += `</div> <div class="bg-gray-300 rounded-xl"> Options: <ol class="flex justify-around"><div class="">`
         // console.log(quizObj.question_ids[i].statement);
         for (let j = 0; j < quizObj.question_ids[i].option_ids.length; j++) {
             const optionText = quizObj.question_ids[i].option_ids[j].option_text;
 
-            questionText += `<li> ${optionText} </li>`
+            if(j==2)
+                questionText += `</div><div class="">`
+            questionText += `<li class="w-full p-2 bg-slate-500 rounded-lg m-2 text-white">${optionSerial[j]}) ${optionText} </li>`
         }
-        questionText += `</ol>`
+        questionText += `</div></ol></div></div>`
 
     }
+    questionText += `</div>`
     if (quizObj.question_ids.length == 0)
         questionText = `There are no question in this quiz`
     questionStatementEl.innerHTML += questionText
