@@ -590,10 +590,9 @@ video {
   margin-right: auto;
 }
 
-<<<<<<< Updated upstream
 .mb-10 {
   margin-bottom: 2.5rem;
-=======
+}
 .mx-16 {
   margin-left: 4rem;
   margin-right: 4rem;
@@ -602,7 +601,6 @@ video {
 .mx-28 {
   margin-left: 7rem;
   margin-right: 7rem;
->>>>>>> Stashed changes
 }
 
 .mb-16 {
@@ -633,7 +631,6 @@ video {
   margin-left: 0.5rem;
 }
 
-<<<<<<< Updated upstream
 .ml-28 {
   margin-left: 7rem;
 }
@@ -646,8 +643,6 @@ video {
   margin-left: 18rem;
 }
 
-=======
->>>>>>> Stashed changes
 .ml-9 {
   margin-left: 2.25rem;
 }
@@ -680,18 +675,14 @@ video {
   margin-top: 1.5rem;
 }
 
-<<<<<<< Updated upstream
-=======
 .ml-16 {
   margin-left: 4rem;
 }
 
->>>>>>> Stashed changes
 .mt-8 {
   margin-top: 2rem;
 }
 
-<<<<<<< Updated upstream
 .ml-1 {
   margin-left: 0.25rem;
 }
@@ -714,7 +705,7 @@ video {
 
 .mb-7 {
   margin-bottom: 1.75rem;
-=======
+}
 .ml-28 {
   margin-left: 7rem;
 }
@@ -729,7 +720,6 @@ video {
 
 .ml-96 {
   margin-left: 24rem;
->>>>>>> Stashed changes
 }
 
 .block {
@@ -792,7 +782,6 @@ video {
   width: 50%;
 }
 
-<<<<<<< Updated upstream
 .w-1\/3 {
   width: 33.333333%;
 }
@@ -801,8 +790,6 @@ video {
   width: 6rem;
 }
 
-=======
->>>>>>> Stashed changes
 .w-36 {
   width: 9rem;
 }
@@ -827,7 +814,6 @@ video {
   width: 100vw;
 }
 
-<<<<<<< Updated upstream
 .w-1\/4 {
   width: 25%;
 }
@@ -842,10 +828,9 @@ video {
 
 .w-1\/12 {
   width: 8.333333%;
-=======
+}
 .w-1\/3 {
   width: 33.333333%;
->>>>>>> Stashed changes
 }
 
 .max-w-screen-xl {
@@ -939,14 +924,11 @@ video {
   background-color: rgb(156 163 175 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
 .bg-green-100 {
   --tw-bg-opacity: 1;
   background-color: rgb(220 252 231 / var(--tw-bg-opacity));
 }
 
-=======
->>>>>>> Stashed changes
 .bg-green-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
@@ -965,14 +947,11 @@ video {
 .bg-red-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(252 165 165 / var(--tw-bg-opacity));
-<<<<<<< Updated upstream
 }
 
 .bg-slate-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
-=======
->>>>>>> Stashed changes
 }
 
 .bg-slate-500 {
@@ -995,28 +974,23 @@ video {
   background-color: rgb(234 179 8 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
-=======
 .bg-yellow-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(161 98 7 / var(--tw-bg-opacity));
 }
 
->>>>>>> Stashed changes
 .bg-yellow-600 {
   --tw-bg-opacity: 1;
   background-color: rgb(202 138 4 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
 .bg-green-500 {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
-=======
+}
 .bg-slate-300 {
   --tw-bg-opacity: 1;
   background-color: rgb(203 213 225 / var(--tw-bg-opacity));
->>>>>>> Stashed changes
 }
 
 .p-1 {
@@ -1086,13 +1060,11 @@ video {
   padding-left: 0.75rem;
 }
 
-<<<<<<< Updated upstream
 .pl-8 {
   padding-left: 2rem;
-=======
+}
 .pb-2 {
   padding-bottom: 0.5rem;
->>>>>>> Stashed changes
 }
 
 .pt-2 {
@@ -1101,13 +1073,10 @@ video {
 
 .pt-5 {
   padding-top: 1.25rem;
-<<<<<<< Updated upstream
 }
 
 .pt-8 {
   padding-top: 2rem;
-=======
->>>>>>> Stashed changes
 }
 
 .text-center {
@@ -1235,20 +1204,16 @@ video {
   background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
-=======
 .hover\:bg-green-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
 }
 
->>>>>>> Stashed changes
 .hover\:bg-green-200:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(187 247 208 / var(--tw-bg-opacity));
 }
 
-<<<<<<< Updated upstream
 .hover\:bg-green-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(34 197 94 / var(--tw-bg-opacity));
@@ -1269,8 +1234,6 @@ video {
   background-color: rgb(134 239 172 / var(--tw-bg-opacity));
 }
 
-=======
->>>>>>> Stashed changes
 .hover\:pl-4:hover {
   padding-left: 1rem;
 }
