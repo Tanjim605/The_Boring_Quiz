@@ -3,13 +3,14 @@ const room_number = url_string.split('/resultView/')[1]
 
 const quizTitleEl = document.getElementById('quiz_title')
 const tableEl = document.getElementById('result_table')
+const loadingEl = document.getElementById('loader-wrapper')
 
 
-let tableDataHtml = `<table class="w-full text-md text-center text-gray-700 ">
-                        <thead class="uppercase bg-green-600 text-white">
-                            <tr>
+let tableDataHtml = `<table class="w-full text-md text-center text-gray-700 z-10 border-2 border-white  ">
+                        <thead class="sticky top-24 uppercase bg-green-600 text-white rounded-xl">
+                            <tr class="sticky top-24">
                                 <th>Sl.</th>
-                                <th></th>`
+                                <th>Student Name</th>`
 
 // console.log(room_number);
 /*
@@ -39,7 +40,7 @@ async function fetchData() {
     }
 
     const quizObj = await response.json()       // Quiz collections gula ekhane
-    quizTitleEl.innerText = quizObj.title
+    quizTitleEl.innerHTML += `<a href="../quiz/${quizObj._id}">${quizObj.title} </a>` 
 
     const totalQuestions = quizObj.question_ids.length      // give us total amount of questions in the quiz
 
@@ -97,7 +98,7 @@ async function fetchData() {
         tableDataHtml += `<td>${correctAnswer}</td></tr>`
     }
     tableDataHtml += `</tbody></table>`         // table finishing
-
+    loadingEl.style.display = 'none'
     tableEl.innerHTML = tableDataHtml
     // console.log(submissionObj.submissions[0]);
 }
