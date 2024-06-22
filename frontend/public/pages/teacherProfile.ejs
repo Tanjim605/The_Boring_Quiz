@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/x-icon" href="../images/favicon/favicon-96.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../images/favicon/favicon-96.png"
+    />
     <link
       rel="stylesheet"
       href="../styles/tailwind-dist/styles.css"
@@ -12,34 +16,41 @@
     <script src="../scripts/teacher.js" defer></script>
 
     <title>Teacher Profile</title>
-</head>
-<body>
-    <div>
+  </head>
+  <body class="h-auto w-auto bg-[#2FB54C]">
+    <div class="pt-5">
+      <div class="text-gray-800 font-semibold text-2xl">
         Teacher name : <span id="t_name"></span>
+      </div>
+
+      <div>Teacher mail : <span id="t_mail"></span></div>
     </div>
 
-    <div>
-        Teacher mail : <span id="t_mail"></span>
+    <br />
+    <div class="w-auto h-full ml-6 mr-6 bg-slate-300 rounded-xl">
+      <div class="font-semibold text-2xl">Quizzes under you:</div>
+      <ol>
+        <span id="t_quiz"></span>
+      </ol>
     </div>
+    <br />
 
-    <div>
-        Teacher password : <span id="t_pass"></span>
+    <div class="mb-10">
+      <button
+        class="w-24 rounded-md p-1 mt-4 bg-green-600 text-white hover:bg-green-500"
+        onclick="createQuiz()"
+        type="submit"
+      >
+        Create Quiz<span class="hover:pl-4">→</span>
+      </button>
+
+      <button
+        class="w-24 rounded-md p-1 mt-4 bg-green-600 text-white hover:bg-green-500"
+        onclick="viewResult()"
+        type="submit"
+      >
+        View Result<span class="hover:pl-4">→</span>
+      </button>
     </div>
-    <br>
-    <div>
-        Quizzes under you:
-        <ol>
-            <span id="t_quiz"></span>
-        </ol>
-        
-    </div>
-    <br>
-    <div>
-        <button onclick="createQuiz()">Create Quiz</button>
-    </div>
-    <br>
-    <div>
-        <button onclick="viewResult()">View Result</button>
-    </div>
-</body>
+  </body>
 </html>
