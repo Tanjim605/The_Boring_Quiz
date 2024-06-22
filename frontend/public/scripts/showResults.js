@@ -5,9 +5,10 @@ const quizTitleEl = document.getElementById('quiz_title')
 const tableEl = document.getElementById('result_table')
 
 
-let tableDataHtml = `<table>
-                        <thead>
+let tableDataHtml = `<table class="w-full text-md text-center text-gray-700 ">
+                        <thead class="uppercase bg-green-600 text-white">
                             <tr>
+                                <th>Sl.</th>
                                 <th></th>`
 
 // console.log(room_number);
@@ -51,11 +52,12 @@ async function fetchData() {
     const totalStudentParticipated = submissionObj.submissions.length
 
     for (let h = 1; h <= totalQuestions; h++) {     // loop to setup table header
-        tableDataHtml += `<th> Q${h} </th>`
+        tableDataHtml += `<th class="py-4"> Q${h} </th>`
     }
-    tableDataHtml += `</tr>
-                        </thead>
-                        <tbody>`                    // table head done here
+    tableDataHtml += `<th>Total Correct Answer</th>
+                        </tr>
+                            </thead>
+                                <tbody>`                    // table head done here
 
 
     for (let i = 0; i < totalStudentParticipated; i++) {
@@ -66,8 +68,10 @@ async function fetchData() {
             return studentResponse.json()
         }
         studentObj = await studentResponse.json()
-        tableDataHtml += `<tr>
-                            <td>${studentObj.name}</td>`
+        tableDataHtml += `<tr class="even:bg-green-50">
+                            <td>${i+1}</td>
+                            <td class="px-6 py-3">${studentObj.name}</td>`
+        let correctAnswer = 0
         // participate kora student er id
         for (let j = 0; j < totalQuestions; j++) {
             const optionResponse = await fetch(`/api/option/${submissionObj.submissions[i].submitted_option[j]}`)
@@ -78,10 +82,19 @@ async function fetchData() {
             }
             optionObj = await optionResponse.json()
             // console.log(optionObj);
-            tableDataHtml += `<td>${optionObj.option_text}</td>`        //returning option text
+            if(optionObj.is_correct == true)
+                {
+                    tableDataHtml += `<td class="px-6 py-3 bg-green-300">${optionObj.option_text}</td>`        //returning option text
+                    correctAnswer++
+                }
+            else if(optionObj.option_text == 'skipped')
+                tableDataHtml += `<td class="px-6 py-3 bg-yellow-200">${optionObj.option_text}</td>`
+            else if(optionObj.is_correct == false)
+                tableDataHtml += `<td class="px-6 py-3 bg-red-300">${optionObj.option_text}</td>`
+            
             // option gular id
         }
-        tableDataHtml += `</tr>`
+        tableDataHtml += `<td>${correctAnswer}</td></tr>`
     }
     tableDataHtml += `</tbody></table>`         // table finishing
 
