@@ -17,7 +17,7 @@ async function fetchStudentData() {
 
     document.getElementById('s_name').innerText = studentObj.name
     document.getElementById('s_mail').innerText = studentObj.email
-    document.getElementById('s_pass').innerText = studentObj.password
+    // document.getElementById('s_pass').innerText = studentObj.password
 
 }
 
