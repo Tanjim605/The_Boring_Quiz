@@ -3,27 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="../../../images/favicon/favicon-96.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../../images/favicon/favicon-96.png"
+    />
     <link
       rel="stylesheet"
       href="../../../styles/tailwind-dist/styles.css"
       type="text/css"
     />
     <script src="../../../scripts/quizToStudent.js" defer></script>
-    
+
     <title>Let's do The Quiz</title>
   </head>
 
-  <body class="ml-10 h-auto w-auto bg-[#2FB54C]">
-    <div>
+  <body class="ml-10 mr-10 bg-[#2FB54C]">
+    <div class="mb-7 max-w-screen-xl mx-auto w-auto h-auto flex flex-col">
+      <div
+        class="bg-slate-300 mt-10 m-0 p-5 px-10 rounded-xl text-gray-800 font-semibold text-2xl"
+      >
         Quiz Title : <span id="quiz_title"></span>
+      </div>
+      <br />
+      <div>
+        <span id="question_statement"></span>
+      </div>
     </div>
-    <br />
-    <div>
-      <span id="question_statement"></span>
-    </div>
-    <div>
-      <button id="submitQuizBtn">Submit</button>
-    </div>
+
+
+    <button class="w-1/6 h-12 text-slate-600 bg-slate-300 hover:bg-green-200 focus:ring-4 focus:bg-green-200 font-medium rounded-lg font-semibold px-5 py-2.5 me-2 mb-2 dark:bg-slate-300 dark:hover:bg-green-200 focus:outline-none dark:focus:bg-slate-300 mx-4 mt-4" id="submitQuizBtn">Submit</button>
+
   </body>
 </html>
