@@ -5,6 +5,8 @@ const quizId = url_string.split('/quiz/')[1]
 const quizTitleEl = document.getElementById('quiz_title')
 const questionStatementEl = document.getElementById('question_statement')
 const optionsEl = document.getElementById('options')
+const launchBtnEl = document.getElementById('launch_btn')
+const roomNumberEl = document.getElementById('launch_room_number')
 
 const optionSerial = 'abcd'
 
@@ -29,13 +31,13 @@ async function fetchQuizData() {
                                 <div class="bg-gray-300 mb-4 rounded-xl"> 
                                     Question: `
         questionText += quizObj.question_ids[i].statement
-        questionText += `</div> <div class="bg-gray-300 rounded-xl"> Options: <ol class="flex justify-around"><div class="">`
+        questionText += `</div> <div class="bg-gray-300 rounded-xl"> Options: <ol class="justify-around"><div class="flex">`
         // console.log(quizObj.question_ids[i].statement);
         for (let j = 0; j < quizObj.question_ids[i].option_ids.length; j++) {
             const optionText = quizObj.question_ids[i].option_ids[j].option_text;
 
             if(j==2)
-                questionText += `</div><div class="">`
+                questionText += `</div><div class="flex">`
             questionText += `<li class="w-full p-2 bg-slate-500 rounded-lg m-2 text-white">${optionSerial[j]}) ${optionText} </li>`
         }
         questionText += `</div></ol></div></div>`
@@ -77,8 +79,14 @@ async function launchQuiz() {
     console.log(response);
 
     if (response.ok) {
-        alert('Quiz launched successfully');
-        alert(`Quiz room number is: ${room_id}`)
+        // alert('Quiz launched successfully');
+        launchBtnEl.style.display = 'none'
+        roomNumberEl.innerHTML = `<div class=" p-16">Quiz launched successfully
+                                <br>
+                                Quiz room number is: <span class="text-red-700 font-bold"> ${room_id} </span>
+                                <br>
+                                <span class= "font-thin">* Please copy the room number to share with your students</span></div>`
+        // alert(`Quiz room number is: ${room_id}`)
     } else {
         const errorData = await response.json();
         alert('Error launching quiz: ' + errorData.message);

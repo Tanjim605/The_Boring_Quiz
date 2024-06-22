@@ -14,8 +14,8 @@
     <title>Quiz Preview</title>
   </head>
 
-  <body class="box-border bg-[#2FB54C]">
-    <div class="max-w-screen-xl mx-auto w-auto h-screen flex flex-col">
+  <body class="bg-[#2FB54C]">
+    <div class="max-w-screen-xl mx-auto w-auto h-auto flex flex-col   ">
         <div class="bg-yellow-500 mt-10 m-0 p-5 px-10 rounded-xl text-gray-800 font-semibold text-2xl">
             Quiz Title : <span id="quiz_title"></span>
         </div>
@@ -23,10 +23,14 @@
         <div>
             <span id="question_statement"></span>
         </div>
-        <div class="flex justify-center">
-            <button class="btn m-4 p-4 w-40 h-6" onclick="launchQuiz()">Launch This Quiz</button>
+        <div class="flex justify-center" id="launch_btn">
+            <button class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800 mx-4 mt-4" onclick="launchQuiz()">Launch This Quiz</button>
+        </div>
+        </div>
+        <div id="launch_room_number" class="font-semibold text-center text-xl flex justify-center bg-[#2FB54C] mx-0 w-auto  ">
+            
         </div>
       
-    </div>
+    
   </body>
 </html>
