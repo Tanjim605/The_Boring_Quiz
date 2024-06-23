@@ -13,26 +13,39 @@
       href="../../../styles/tailwind-dist/styles.css"
       type="text/css"
     />
+    <link rel="stylesheet" href="../../../styles/mystyle.css" type="text/css" />
     <script src="../../../scripts/quizToStudent.js" defer></script>
 
     <title>Let's do The Quiz</title>
   </head>
 
-  <body class="ml-10 mr-10 bg-[#2FB54C]">
+  <body class="ml-10 mr-10 bg-gray-200">
     <div class="mb-7 max-w-screen-xl mx-auto w-auto h-auto flex flex-col">
       <div
-        class="bg-slate-300 mt-10 m-0 p-5 px-10 rounded-xl text-gray-800 font-semibold text-2xl"
+        class="bg-green-500 mt-10 m-0 p-5 px-10 rounded-xl text-gray-800 font-semibold text-2xl"
       >
-        Quiz Title : <span id="quiz_title"></span>
+        Let's attend the quiz
       </div>
-      <br />
-      <div>
-        <span id="question_statement"></span>
+      <div class="bg-gray-300 mt-16 ml-12 rounded-xl">
+        <div
+          class="bg-gray-600 mt-10 mx-10 p-5 px-10 rounded-xl text-gray-200 font-semibold text-2xl"
+        >
+          Quiz Title : <span id="quiz_title"></span>
+        </div>
+        <br />
+        <div class="mx-10 px-10 pb-10">
+          <span id="question_statement"></span>
+        </div>
       </div>
     </div>
 
-
-    <button class="w-1/6 h-12 text-slate-600 bg-slate-300 hover:bg-green-200 focus:ring-4 focus:bg-green-200 font-medium rounded-lg font-semibold px-5 py-2.5 me-2 mb-2 dark:bg-slate-300 dark:hover:bg-green-200 focus:outline-none dark:focus:bg-slate-300 mx-4 mt-4" id="submitQuizBtn">Submit</button>
-
+    <div class="flex justify-center mb-10">
+      <button
+        class="w-1/6 h-12 text-slate-200 bg-slate-700 hover:bg-green-200 focus:ring-4 focus:bg-green-200 rounded-lg font-semibold px-5 py-2.5 me-2 mb-2 dark:bg-slate-500 dark:hover:bg-green-600 dark:hover:scale-110 dark:focus:scale-100 focus:outline-none dark:focus:bg-slate-300 mx-4 mt-4"
+        id="submitQuizBtn"
+      >
+        Submit
+      </button>
+    </div>
   </body>
 </html>

@@ -1,61 +1,91 @@
 /* dummy CSS */
 #loader-wrapper {
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: var(--body-color);
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 99;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--body-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
 }
 
 .loader {
-    display: inline-block;
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    border: 4px solid red;
-    animation: loader 2s infinite ease;
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  border: 4px solid red;
+  animation: loader 2s infinite ease;
 }
 
 .loader-inner {
-    vertical-align: top;
-    display: inline-block;
-    width: 100%;
-    background-color: var(--first-color);
-    animation: loader-inner 2s infinite ease-in;
+  vertical-align: top;
+  display: inline-block;
+  width: 100%;
+  background-color: var(--first-color);
+  animation: loader-inner 2s infinite ease-in;
 }
 
 @keyframes loader {
-    0% { transform: rotate(0deg);}
-    25% { transform: rotate(180deg);}
-    50% { transform: rotate(180deg);}
-    75% { transform: rotate(360deg);}
-    100% { transform: rotate(360deg);}
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(180deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @keyframes loader-inner {
-    0% { height: 0%;}
-    25% { height: 0%;}
-    50% { height: 100%;}
-    75% { height: 100%;}
-    100% { height: 0%;}
+  0% {
+    height: 0%;
+  }
+  25% {
+    height: 0%;
+  }
+  50% {
+    height: 100%;
+  }
+  75% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
 }
-
 
 /* table style */
 table {
-    border-collapse: collapse;
+  border-collapse: collapse;
 }
 th {
-    /* background-color:green; */
-    Color:white;
+  /* background-color:green; */
+  color: white;
 }
-th, td {
-    text-align:center;
-    border:2px solid rgb(255, 255, 255);
- 
+th,
+td {
+  text-align: center;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+/* design for horizontal line in quiz to student */
+hr {
+  color: black;
+  /* border: none; */
+  border: 1px solid gray;
+  overflow: visible;
+  text-align: center;
+  height: 2px;
+  margin: 15px 15px;
 }
