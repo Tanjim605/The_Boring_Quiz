@@ -25,9 +25,9 @@ async function fetchTeacherData() {
   for (let i = 0; i < teacherObj.quiz_ids.length; i++) {
     let quiz_link =
       window.location.href + `/quiz/${teacherObj.quiz_ids[i]._id}`;
-    quizzes.innerHTML += `<div>
-     <button class="w-1/2 bg-green-100 font-medium mt-3 m-0 p-5 rounded-xl text-gray-800 ml-72 hover:pl-4 hover:bg-green-200">
-        <li>
+    quizzes.innerHTML += `<div class="w-1/2 flex">
+     <button class="w-2/3 content-center bg-green-100 font-medium mx-auto mt-3 p-5 rounded-xl text-gray-800 hover:pl-4 hover:bg-green-200">
+        <li >
            <a href="${quiz_link}"> ${teacherObj.quiz_ids[i].title} </a>
          </li>
     </button>

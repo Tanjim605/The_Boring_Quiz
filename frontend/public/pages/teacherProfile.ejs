@@ -17,40 +17,65 @@
 
     <title>Teacher Profile</title>
   </head>
-  <body class="ml-10 h-auto w-auto bg-[#2FB54C]">
-    <div class="pt-5">
-      <div class="text-gray-800 font-semibold text-2xl">
-        Name : <span id="t_name"></span>
+
+  <body class="h-auto w-auto bg-[#d7d7d7]">
+    <div>
+      <div class="h-72 overflow-hidden">
+        <img src="../images/user-cover.jpg" alt="" />
+      </div>
+      <div class="h-36 w-36 ml-40 mt-10">
+        <img
+          src="../images/student-avatar-user-profile-icon-vector.jpg"
+          alt=""
+          class="rounded-3xl"
+        />
+      </div>
+    </div>
+
+    <div class="mx-44 mt-8">
+      <div class="pt-5">
+        <div class="text-gray-800 font-semibold text-2xl font-mono">
+          Name : <span id="t_name"></span>
+        </div>
+
+        <div class="mx-6 text-gray-700 font-mono">
+          Mail : <span id="t_mail"></span>
+        </div>
       </div>
 
-      <div>Mail : <span id="t_mail"></span></div>
-    </div>
+      <div class="w-full">
+        <div class="mx-auto flex justify-center mt-10">
+          <button
+            class="ml-5 mb-5 p-5 pt-2 pb-2 rounded-md font-medium bg-slate-400 text-gray-800 hover:bg-green-400 hover:scale-105"
+            onclick="createQuiz()"
+            type="submit"
+          >
+            Create Quiz<span> →</span>
+          </button>
 
-    <br />
-    <div class="w-auto h-full ml-6 mr-6 bg-slate-300 rounded-xl">
-      <div class="font-semibold text-2xl pl-8 pt-8">Quizzes under you:</div>
-      <ol>
-        <span id="t_quiz"></span>
-      </ol>
-    </div>
-    <br />
+          <button
+            class="ml-5 mb-5 p-5 pt-2 pb-2 rounded-md font-medium bg-slate-400 text-gray-800 hover:bg-green-400 hover:scale-105"
+            onclick="viewResult()"
+            type="submit"
+          >
+            View Result<span> →</span>
+          </button>
+        </div>
+      </div>
+      
+      <div class="w-auto h-full ml-6 mr-6 p-8 bg-slate-400 rounded-xl">
+        <div class="font-semibold text-2xl pl-8 pt-8">
+          Quizzes under you:
+        </div>
+        <ol class="flex flex-wrap">
+          <span id="t_quiz" class="w-full flex flex-wrap ">
 
-    <div class="mb-10">
-      <button
-        class="w-24 rounded-md p-1 mt-4 bg-green-600 text-white hover:bg-green-500"
-        onclick="createQuiz()"
-        type="submit"
-      >
-        Create Quiz<span class="hover:pl-4">→</span>
-      </button>
+          </span>
+        </ol>
+      </div>
+      <br />
 
-      <button
-        class="w-24 rounded-md p-1 mt-4 bg-green-600 text-white hover:bg-green-500"
-        onclick="viewResult()"
-        type="submit"
-      >
-        View Result<span class="hover:pl-4">→</span>
-      </button>
+      
     </div>
   </body>
 </html>
