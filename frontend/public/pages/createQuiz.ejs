@@ -3,39 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/x-icon" href="../../images/favicon/favicon-96.png">
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../../images/favicon/favicon-96.png"
+    />
     <link
       rel="stylesheet"
       href="../../styles/tailwind-dist/styles.css"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="../../styles/createQuizStyle.css"
+      type="text/css"
+    />
+
     <script src="../../scripts/createQuiz.js" defer></script>
 
     <title>Create Quiz</title>
   </head>
 
-  <body>
-    <h1>Create Quiz</h1>
-    <form id="quizForm">
-      <label for="title">Quiz Title:</label>
-      <input type="text" id="title" name="title" required /><br />
-
-      <div id="questions"></div>
-
-      <div>
-        <br />
-        <input type="radio" name="q_type" id="mcq" value="mcq" />
-        <label for="mcq">MCQ</label>
-
-        <input type="radio" name="q_type" id="tf" value="tf" />
-        <label for="tf">True/False</label>
-
-        <button onclick="addQuestion()">Add Question</button>
-        <br />
-        <br />
+  <body class="h-auto w-auto bg-[#d7d7d7]">
+    <div class="mx-52 mt-16">
+      <div
+        class="bg-green-500 mt-10 m-0 p-5 px-10 rounded-xl text-gray-800 font-semibold text-2xl"
+      >
+        <h1>Create Quiz</h1>
       </div>
 
-      <button type="submit">Create Quiz</button>
-    </form>
+      <div>
+        <form id="quizForm" class="text-gray-700 p-11 ml-auto mr-auto">
+          <div class=" text-lg">
+            <label for="title"> Quiz Title: </label>
+            <input 
+              class="border-gray-500 border-2 rounded-xl focus:outline-none pl-6 ml-9 w-96 h-12 flex-grow"
+              type="text" 
+              id="title" 
+              name="title" 
+              required 
+              />
+          </div>
+
+          <div id="questions"></div>
+
+          <div class="flex">
+            <div class="w-36 h-24 text-center">
+              <input
+                class="peer"
+                type="radio"
+                name="q_type"
+                id="mcq"
+                value="mcq"
+                required
+              />
+              <label
+                class="inline-flex items-center justify-between w-full text-center p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-xl cursor-pointer peer-checked:text-green-600 peer-checked:border-green-600 peer-checked:bg-green-50 peer-checked:font-semibold hover:text-gray-600 hover:bg-gray-100"
+                for="mcq"
+              >
+                MCQ
+              </label>
+            </div>
+            <div class="w-36 h-24 text-center">
+              <input
+                class="peer"
+                type="radio"
+                name="q_type"
+                id="tf"
+                value="tf"
+                required
+              />
+              <label
+                class="inline-flex ml-2 items-center justify-between w-full text-center p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-xl cursor-pointer peer-checked:text-green-600 peer-checked:border-green-600 peer-checked:bg-green-50 peer-checked:font-semibold hover:text-gray-600 hover:bg-gray-100"
+                for="tf"
+              >
+                True/False
+              </label>
+            </div>
+
+            <div class="w-36 text-center">
+              <button
+                class="w-36 h-16 ml-5 mt-6 p-5 rounded-md font-medium bg-yellow-400 text-gray-800 hover:bg-yellow-500 hover:scale-105"
+                onclick="addQuestion()"
+              >
+                Add Question
+              </button>
+            </div>
+          </div>
+
+          <div>
+            <button
+              class="ml-5 mt-5 mb-5 p-5 pt-2 pb-2 rounded-md font-medium bg-slate-400 text-gray-800 hover:bg-green-400 hover:scale-105"
+              type="submit"
+            >
+              Create Quiz
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
   </body>
 </html>
