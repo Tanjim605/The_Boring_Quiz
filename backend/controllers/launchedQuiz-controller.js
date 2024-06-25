@@ -8,6 +8,8 @@ const createLaunchedQuiz = async (req, res) => {
     try {
         const newLaunchedQuiz = new LaunchedQuiz({ room_id, quiz_id })
         await newLaunchedQuiz.save()
+        // console.log(room_id);
+        // console.log(res);
         res.status(201).json({ message: 'Quiz launched successfully' })
     } catch (error) {
         res.status(400).json({ error: error.message })

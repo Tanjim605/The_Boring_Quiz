@@ -1,0 +1,30 @@
+h4{
+    /* font-weight: 400;
+    font-size: large; */
+    margin-top: 50px;
+}
+
+h5{
+    margin-top: 15px;
+}
+
+h4 ~ input[type="text"]{
+    /* height: 200px;
+    width: 1000px; */
+}
+
+input[type="text"] {
+    height: 40px;
+    margin: 3px;
+    border-radius: 5px;
+    padding: 2px 15px;
+}
+
+input[type="radio"]:checked{
+    color: rgb(17, 24, 38);
+    background-color: rgb(17, 24, 38);
+}
+
+.options{
+
+}
