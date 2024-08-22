@@ -35,10 +35,17 @@ async function fetchQuizData() {
         // console.log(quizObj.question_ids[i].statement);
         for (let j = 0; j < quizObj.question_ids[i].option_ids.length; j++) {
             const optionText = quizObj.question_ids[i].option_ids[j].option_text;
+            const optionIsCorrect = quizObj.question_ids[i].option_ids[j].is_correct;
 
-            if(j==2)
+            if(j==2)        // this condition to render options in 2x2 grid
                 questionText += `</div><div class="flex">`
-            questionText += `<li class="w-full p-2 bg-slate-500 rounded-lg m-2 text-white">${optionSerial[j]}) ${optionText} </li>`
+
+
+            // this condition below is to make the right answer green. to make sure the question set is ok before launch
+            if(optionIsCorrect)     
+                questionText += `<li class="w-full p-2 bg-green-500 rounded-lg m-2 text-white">${optionSerial[j]}) ${optionText} </li>`
+            else
+                questionText += `<li class="w-full p-2 bg-slate-500 rounded-lg m-2 text-white">${optionSerial[j]}) ${optionText} </li>`
         }
         questionText += `</div></ol></div></div>`
 
