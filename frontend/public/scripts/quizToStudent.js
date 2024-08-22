@@ -101,7 +101,7 @@ submitQuizBtnEl.addEventListener('click', async function () {
     const room_number = roomId;
 
     const dataToSend = {
-        room_id: room_number,
+        room_id: roomId,
         submissions: [
             {
                 student_id: student_id,
@@ -120,7 +120,7 @@ submitQuizBtnEl.addEventListener('click', async function () {
             body: JSON.stringify(dataToSend)
         }
 
-        const response = await fetch(`/api/submission/${room_number}`, option);
+        const response = await fetch(`/api/submission/${roomId}`, option);
 
         if (response.ok) {
             const result = await response.json();
