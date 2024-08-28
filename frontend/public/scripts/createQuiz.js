@@ -92,7 +92,7 @@ function addTfQuestion() {
                         <input type="text" id="optionText-${questionIndex}-1-f" name="questions[${questionIndex}][options][1][option_text]" value="False" required readonly>
                         
                         <label for="isCorrect-${questionIndex}-1-f">Is Correct:</label>
-                        <input type="radio" id="isCorrect-${questionIndex}-1-f" name="questions[${questionIndex}][options][0][is_correct]">
+                        <input type="radio" id="isCorrect-${questionIndex}-1-f" name="questions[${questionIndex}][options][1][is_correct]">
                     </div>
                 </div>
             `;
