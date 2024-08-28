@@ -1,1 +1,1 @@
-window.location.href += 'signup'
+window.location.href += 'login'
