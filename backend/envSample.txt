@@ -1,0 +1,4 @@
+PORT
+ATLAS_URI = "mongodb+srv://<userId>:<password>@backenddb.pwut9sa.mongodb.net/the_boring_quiz_DB?retryWrites=true&w=majority&appName=BackendDB"
+
+password and userId can be get from Database Access section under security in mongodb
