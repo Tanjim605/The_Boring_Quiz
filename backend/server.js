@@ -1,3 +1,6 @@
+// require('dotenv').config({ path: "./config.env" })       // this line is if the env file has some other name before the filename extension. for example "config.env"
+require('dotenv').config()                                  // this works if the env file name is ".env"
+
 const port = process.env.PORT || 8593           // port defined as localhost:8593 or hosting port
 
 const express = require('express')
@@ -35,7 +38,7 @@ app.use('/api/submission', submitAnswerRoutes)
 app.use('/', renderRoutes)      // all types of page rendering is done by this
 
 
-mongoose.connect('mongodb+srv://c213076:qZPntQBkLAauWGw1@backenddb.pwut9sa.mongodb.net/the_boring_quiz_DB?retryWrites=true&w=majority&appName=BackendDB')
+mongoose.connect(process.env.ATLAS_URI)
     .then(() => {
         console.log(`connected to the the_boring_quiz_DB`)
         app.listen(port, () => {
